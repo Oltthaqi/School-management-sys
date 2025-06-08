@@ -47,17 +47,14 @@ public class StudentService {
     }
 
     public StudentDTO.Response createStudent(StudentDTO.Request request) {
-        // Check if email already exists
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already exists: " + request.getEmail());
         }
 
-        // Check if student ID already exists
         if (studentRepository.existsByStudentId(request.getStudentId())) {
             throw new RuntimeException("Student ID already exists: " + request.getStudentId());
         }
 
-        // Create user first
         String hashedPassword = passwordEncoder.encode("defaultPassword123"); // Default password
         Set<User.Role> roles = Set.of(User.Role.ROLE_STUDENT);
         User user = studentMapper.createUser(request, hashedPassword, roles);

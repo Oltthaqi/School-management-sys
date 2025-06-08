@@ -57,65 +57,65 @@ public class AuthController {
                 new HashSet<>(roles)));
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody AuthDTO.RegisterRequest signUpRequest) {
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-            return ResponseEntity
-                    .badRequest()
-                    .body(new MessageResponse("Error: Email is already in use!"));
-        }
-
-        User user = User.builder()
-                .email(signUpRequest.getEmail())
-                .firstName(signUpRequest.getFirstName())
-                .lastName(signUpRequest.getLastName())
-                .password(encoder.encode(signUpRequest.getPassword()))
-                .isActive(true)
-                .build();
-
-        Set<String> strRoles = signUpRequest.getRoles();
-        Set<User.Role> roles = new HashSet<>();
-
-        if (strRoles == null) {
-            roles.add(User.Role.ROLE_STUDENT);
-        } else {
-            strRoles.forEach(role -> {
-                switch (role) {
-                    case "admin":
-                    case "ROLE_ADMIN":
-                        roles.add(User.Role.ROLE_ADMIN);
-                        break;
-                    case "teacher":
-                    case "ROLE_TEACHER":
-                        roles.add(User.Role.ROLE_TEACHER);
-                        break;
-                    default:
-                        roles.add(User.Role.ROLE_STUDENT);
-                }
-            });
-        }
-
-        user.setRoles(roles);
-        userRepository.save(user);
-
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(signUpRequest.getEmail(), signUpRequest.getPassword()));
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = jwtUtils.generateJwtToken(authentication);
-
-        UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
-        List<String> rolesList = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
-                .collect(Collectors.toList());
-
-        return ResponseEntity.ok(new AuthDTO.AuthResponse(jwt,
-                userDetails.getId(),
-                userDetails.getEmail(),
-                user.getFirstName(),
-                user.getLastName(),
-                new HashSet<>(rolesList)));
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<?> registerUser(@Valid @RequestBody AuthDTO.RegisterRequest signUpRequest) {
+//        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
+//            return ResponseEntity
+//                    .badRequest()
+//                    .body(new MessageResponse("Error: Email is already in use!"));
+//        }
+//
+//        User user = User.builder()
+//                .email(signUpRequest.getEmail())
+//                .firstName(signUpRequest.getFirstName())
+//                .lastName(signUpRequest.getLastName())
+//                .password(encoder.encode(signUpRequest.getPassword()))
+//                .isActive(true)
+//                .build();
+//
+//        Set<String> strRoles = signUpRequest.getRoles();
+//        Set<User.Role> roles = new HashSet<>();
+//
+//        if (strRoles == null) {
+//            roles.add(User.Role.ROLE_STUDENT);
+//        } else {
+//            strRoles.forEach(role -> {
+//                switch (role) {
+//                    case "admin":
+//                    case "ROLE_ADMIN":
+//                        roles.add(User.Role.ROLE_ADMIN);
+//                        break;
+//                    case "teacher":
+//                    case "ROLE_TEACHER":
+//                        roles.add(User.Role.ROLE_TEACHER);
+//                        break;
+//                    default:
+//                        roles.add(User.Role.ROLE_STUDENT);
+//                }
+//            });
+//        }
+//
+//        user.setRoles(roles);
+//        userRepository.save(user);
+//
+//        Authentication authentication = authenticationManager.authenticate(
+//                new UsernamePasswordAuthenticationToken(signUpRequest.getEmail(), signUpRequest.getPassword()));
+//
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
+//        String jwt = jwtUtils.generateJwtToken(authentication);
+//
+//        UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
+//        List<String> rolesList = userDetails.getAuthorities().stream()
+//                .map(item -> item.getAuthority())
+//                .collect(Collectors.toList());
+//
+//        return ResponseEntity.ok(new AuthDTO.AuthResponse(jwt,
+//                userDetails.getId(),
+//                userDetails.getEmail(),
+//                user.getFirstName(),
+//                user.getLastName(),
+//                new HashSet<>(rolesList)));
+//    }
 
     public static class MessageResponse {
         private String message;
