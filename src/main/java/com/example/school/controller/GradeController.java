@@ -19,7 +19,6 @@ public class GradeController {
     @Autowired
     private GradeService gradeService;
 
-    // ADMIN or TEACHER can list all grades
     @GetMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public ResponseEntity<List<GradeDTO.Response>> getAllGrades() {
