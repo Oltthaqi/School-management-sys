@@ -27,7 +27,6 @@ public interface TeacherMapper {
     Teacher toEntity(TeacherDTO.Request request, User user);
     
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "username", source = "request.email")
     @Mapping(target = "email", source = "request.email")
     @Mapping(target = "firstName", source = "request.firstName")
     @Mapping(target = "lastName", source = "request.lastName")
