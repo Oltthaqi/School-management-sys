@@ -19,7 +19,7 @@ public class EnrollmentController {
     @Autowired
     private EnrollmentService enrollmentService;
 
-    // ADMIN or TEACHER can list
+
     @GetMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
     public ResponseEntity<List<EnrollmentDTO.Response>> getAll() {

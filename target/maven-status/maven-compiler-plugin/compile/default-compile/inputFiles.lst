@@ -9,13 +9,9 @@ C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\dto\AuthDTO.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\mapper\StudentMapper.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\service\StudentService.java
-C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\mapper\AdmissionMapper.java
-C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\controller\AdmissionController.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\controller\CourseController.java
-C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\repository\AdmissionRepository.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\controller\EnrollmentController.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\repository\EnrollmentRepository.java
-C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\service\AdmissionService.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\dto\TeacherDTO.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\service\GradeService.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\mapper\TeacherMapper.java
@@ -24,9 +20,7 @@ C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\service\TeacherService.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\repository\StudentRepository.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\model\Enrollment.java
-C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\dto\AdmissionDTO.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\service\CourseService.java
-C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\model\Admission.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\SchoolManagementApplication.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\security\JwtUtils.java
 C:\Users\Admin\Downloads\project-bolt-sb1-nsyq3suc (1)\project\school-management-backend\src\main\java\com\example\school\mapper\GradeMapper.java

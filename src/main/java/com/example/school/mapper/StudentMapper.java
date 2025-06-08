@@ -23,7 +23,6 @@ public interface StudentMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "user", source = "user")
     @Mapping(target = "enrollments", ignore = true)
-    @Mapping(target = "admission", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "updatedAt", ignore = true)
     Student toEntity(StudentDTO.Request request, User user);

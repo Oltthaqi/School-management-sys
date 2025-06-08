@@ -1,7 +1,5 @@
 package com.example.school.mapper;
 
-import com.example.school.dto.AdmissionDTO;
-import com.example.school.model.Admission;
 import com.example.school.model.Student;
 import javax.annotation.processing.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-06-08T13:47:53+0200",
+    date = "2025-06-08T14:19:46+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.1 (Oracle Corporation)"
 )
 @Component

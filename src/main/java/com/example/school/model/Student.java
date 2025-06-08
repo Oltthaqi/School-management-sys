@@ -43,8 +43,6 @@ public class Student {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Enrollment> enrollments;
 
-    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Admission admission;
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
