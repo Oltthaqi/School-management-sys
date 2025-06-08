@@ -104,4 +104,8 @@ public class StudentService {
         }
         return false;
     }
+
+    public  long countAllStudents() {
+        return studentRepository.countAllStudents();
+    }
 }

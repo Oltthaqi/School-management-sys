@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/migration/V5__seed_default_data.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/migration/V6__Remove_username.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/migration/V7__drop_admissions_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/migration/V8__default_admin_user.sql" dialect="MySQL" />
   </component>
 </project>

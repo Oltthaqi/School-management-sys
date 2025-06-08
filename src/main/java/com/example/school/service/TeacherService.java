@@ -100,4 +100,7 @@ public class TeacherService {
                 .map(t -> t.getId().equals(teacherId))
                 .orElse(false);
     }
+    public  long countAllTeachers() {
+        return teacherRepository.countAllTeachers();
+    }
 }

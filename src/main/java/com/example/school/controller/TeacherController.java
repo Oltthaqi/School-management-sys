@@ -53,4 +53,11 @@ public class TeacherController {
         teacherService.deleteTeacher(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/stats/count")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Long> getTotalTeachers() {
+        Long total = teacherService.countAllTeachers();
+        return ResponseEntity.ok(total);
+    }
 }

@@ -52,4 +52,11 @@ public class StudentController {
         studentService.deleteStudent(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/stats/count")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Long> getTotalStudents() {
+        Long total = studentService.countAllStudents();
+        return ResponseEntity.ok(total);
+    }
 }

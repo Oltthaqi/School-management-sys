@@ -17,4 +17,8 @@ public interface TeacherRepository extends JpaRepository<Teacher, Long> {
     
     @Query("SELECT t FROM Teacher t WHERE t.user.email = :email")
     Optional<Teacher> findByEmail(@Param("email") String email);
+
+    @Query("SELECT COUNT(t) FROM Teacher t")
+    long countAllTeachers();
+
 }

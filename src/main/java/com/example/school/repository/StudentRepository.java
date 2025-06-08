@@ -17,4 +17,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     
     @Query("SELECT s FROM Student s WHERE s.user.email = :email")
     Optional<Student> findByEmail(@Param("email") String email);
+
+    @Query("SELECT COUNT(s) FROM Student s")
+    long countAllStudents();
 }
