@@ -115,4 +115,8 @@ public class CourseService {
                 .getId()
                 .equals(userId);
     }
+
+    public  long countAllCourses() {
+        return courseRepository.countAllCourses();
+    }
 }

@@ -9,12 +9,14 @@ import com.example.school.repository.CourseRepository;
 import com.example.school.repository.EnrollmentRepository;
 import com.example.school.repository.StudentRepository;
 import com.example.school.security.UserPrincipal;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
@@ -49,7 +51,7 @@ public class EnrollmentService {
         return enrollmentMapper.toResponse(e);
     }
 
-    public EnrollmentDTO.Response createEnrollment(EnrollmentDTO.Request request) {
+    public EnrollmentDTO.Response createEnrollment(@Valid @RequestBody EnrollmentDTO.Request request) {
         if (enrollmentRepository.existsByStudentIdAndCourseId(
                 request.getStudentId(), request.getCourseId())) {
             throw new ResponseStatusException(
@@ -101,5 +103,8 @@ public class EnrollmentService {
                         HttpStatus.NOT_FOUND, "Enrollment not found with id: " + enrollmentId));
 
         return e.getStudent().getUser().getId().equals(userId);
+    }
+    public  long countAllEnrollments() {
+        return enrollmentRepository.countAllEnrollments();
     }
 }

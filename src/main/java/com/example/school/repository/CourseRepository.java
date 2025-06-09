@@ -15,5 +15,5 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     Boolean existsByCourseCode(String courseCode);
 
     @Query("SELECT COUNT(c) FROM Course c")
-    long countAllC();
+    long countAllCourses();
 }

@@ -56,4 +56,11 @@ public class CourseController {
         courseService.deleteCourse(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/stats/count")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Long> getTotalCourses() {
+        Long total = courseService.countAllCourses();
+        return ResponseEntity.ok(total);
+    }
 }

@@ -57,4 +57,10 @@ public class EnrollmentController {
         enrollmentService.deleteEnrollment(id);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/stats/count")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Long> getTotalEnrollment() {
+        Long total = enrollmentService.countAllEnrollments();
+        return ResponseEntity.ok(total);
+    }
 }
